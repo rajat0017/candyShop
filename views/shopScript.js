@@ -52,7 +52,20 @@ function addRow(details) {
         priceCell:details.price,
         quantityCell:details.quantity-1
       }
-      post= async()=>{
+      if(obj.quantityCell==0){
+        deleteCandy=async()=>{
+          try{
+            await axios.delete(`http://localhost:3000/delete/${obj.id}`);
+        }
+        catch(err){
+            console.log(err);
+        }
+        window.location.href = 'http://127.0.0.1:5500/views/shop.html';
+        }
+        deleteCandy();
+      }
+      else{
+        post= async()=>{
           try{
               await axios.post(`http://localhost:3000/update/${obj.id}`, obj);
           }
@@ -62,6 +75,8 @@ function addRow(details) {
           window.location.href = 'http://127.0.0.1:5500/views/shop.html';
       }
       post();
+      }
+      
     }
    
   }
@@ -82,7 +97,20 @@ function addRow(details) {
         priceCell:details.price,
         quantityCell:details.quantity-2
       }
-      post= async()=>{
+      if(obj.quantityCell==0){
+        deleteCandy=async()=>{
+          try{
+            await axios.delete(`http://localhost:3000/delete/${obj.id}`);
+        }
+        catch(err){
+            console.log(err);
+        }
+        window.location.href = 'http://127.0.0.1:5500/views/shop.html';
+        }
+        deleteCandy();
+      }
+      else{
+        post= async()=>{
           try{
               await axios.post(`http://localhost:3000/update/${obj.id}`, obj);
           }
@@ -92,6 +120,8 @@ function addRow(details) {
           window.location.href = 'http://127.0.0.1:5500/views/shop.html';
       }
       post();
+      }
+      
     }
     
   }
@@ -112,16 +142,31 @@ function addRow(details) {
         priceCell:details.price,
         quantityCell:details.quantity-3
       }
-      post= async()=>{
-        try{
-          await axios.post(`http://localhost:3000/update/${obj.id}`, obj);
+      if(obj.quantityCell==0){
+        deleteCandy=async()=>{
+          try{
+            await axios.delete(`http://localhost:3000/delete/${obj.id}`);
         }
         catch(err){
-          console.log(err);
+            console.log(err);
         }
         window.location.href = 'http://127.0.0.1:5500/views/shop.html';
+        }
+        deleteCandy();
       }
-      post();
+      else{
+        post= async()=>{
+          try{
+            await axios.post(`http://localhost:3000/update/${obj.id}`, obj);
+          }
+          catch(err){
+            console.log(err);
+          }
+          window.location.href = 'http://127.0.0.1:5500/views/shop.html';
+        }
+        post();
+      }
+      
     }
     }
     

@@ -10,6 +10,8 @@ router.post('/additem',controller.AddItem);
 
 router.get('/shop',controller.getDetails);
 
-router.post('/update/:id', controller.editUser);
+router.post('/update/:id', controller.Update);
+
+router.delete('/delete/:id',controller.deleteCandy);
 
 module.exports = router;

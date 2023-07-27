@@ -20,7 +20,7 @@ const adminroutes= require('./routes/admin')
 app.use(adminroutes);
 
 sequelize
-  .sync({force:true})
+  .sync()
   .then(result => {
     app.listen(3000);
   })

@@ -53,7 +53,7 @@ exports.getDetails = async (req, res, next) => {
 //         });
 // };
 
-exports.editUser = async (req, res, next) => {
+exports.Update = async (req, res, next) => {
     try {
 
         const updatedcandy = req.body.candyCell;
@@ -81,4 +81,20 @@ exports.editUser = async (req, res, next) => {
         res.status(500).json({ error: err })
     }
     
+}
+
+exports.deleteCandy = async (req, res, next) => {
+    try{
+        const id = req.params.id;
+        const user = await Details.findAll({where: {id:id}});
+        if(!user){
+            console.log('This user does not exist.');
+            return res.sendStatus(400);
+        }
+        await Details.destroy({where: {id:id}});
+        res.sendStatus(200);
+        }catch(err){
+            console.log(err);
+            res.status(500).json({error : err})
+        }
 }
