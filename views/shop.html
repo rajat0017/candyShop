@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Candy Shop</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .add-row-btn {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    /* ... (Same CSS styles as before) ... */
+    .buy-button {
+      background-color: #2196F3;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<nav>
+    <a action="/views/index.html" href="/views/shop.html">Shop</a>
+    <a href="/views/index.html">Add Item</a>
+  </nav>
+  <br>
+<body>
+  <table>
+    <tr>
+      <th>Candy</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <input type="hidden" id="id" name="id" >
+    </tr>
+    <!-- Rows will be dynamically added here -->
+  </table>
+
+  <!-- <button class="add-row-btn" onclick="addRow()">Add Row</button> -->
+<script src="shopScript.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
+</body>
+</html>
